@@ -33,12 +33,13 @@ function query_log_db() {
 		&& is_valid_date($_GET['start_date'])
 		&& is_valid_date($_GET['end_date'])
 	) {
-		$start_date = $_GET['start_date'];
-		$end_date   = $_GET['end_date'];
-		$sql .= " AND datetime >= '{$start_date}' AND datetime <= '{$end_date}'";
-	}
+		$start_date = date('Y-m-d H:i:s', strtotime($_GET['start_date']));
+		$end_date   = date('Y-m-d H:i:s', strtotime($_GET['end_date']));
 
-	$sql .= " ORDER BY datetime ASC";
+		$sql .= " AND date(datetime) >= date('{$start_date}') AND date(datetime) <= date('{$end_date}')";
+	}
+	$sql .= " ORDER BY date(datetime) ASC";
+
 	$result = $db->query($sql);
 	if (empty($result)) {
 		return false;

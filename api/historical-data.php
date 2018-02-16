@@ -23,15 +23,16 @@ function query_log_db() {
 		&& is_valid_date($_GET['start_date'])
 		&& is_valid_date($_GET['end_date'])
 	) {
-		$start_date = $_GET['start_date'];
-		$end_date   = $_GET['end_date'];
-		$sql .= " AND datetime >= '{$start_date}' AND datetime <= '{$end_date}'";
+		$start_date = date('Y-m-d H:i:s', strtotime($_GET['start_date']));
+		$end_date   = date('Y-m-d H:i:s', strtotime($_GET['end_date']));
+
+		$sql .= " AND date(datetime) >= date('{$start_date}') AND date(datetime) <= date('{$end_date}')";
 	} else {
 		// Default to last 24 hours
-		$start_date = date('Y-m-d', strtotime('now -24 hours'));
-		$sql .= " AND datetime >= '{$start_date}'";
+		$start_date = date('Y-m-d H:i:s', strtotime('now -24 hours'));
+		$sql .= " AND date(datetime) >= date('{$start_date}')";
 	}
-	$sql .= " ORDER BY datetime ASC";
+	$sql .= " ORDER BY date(datetime) ASC";
 
 	$result = $db->query($sql);
 	if (empty($result)) {
