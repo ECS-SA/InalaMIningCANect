@@ -1,0 +1,24 @@
+page-historical-data {
+    overflow: hidden;
+
+	ion-title, p {
+		display:inline-flex;
+	}
+	p {
+		margin:0;
+		float:right;
+		margin-right:6px;
+		margin-top:6px;
+		font-weight:bold;
+	}
+
+	canvas {
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+    .item-ios .item-button {
+    	font-size: 18px;
+    	height: 30px;
+    }
+}

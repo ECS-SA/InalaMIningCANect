@@ -1,0 +1,37 @@
+page-live-data {
+	ion-label.label-ios,
+  ion-label.label-md {
+		margin: 0 !important;
+	}
+
+  ion-list.list.list-ios,
+  ion-list.list.list-md {
+    margin-bottom: 0;
+    .list-header-md,
+    .list-header-ios {
+      margin-bottom:0;
+    }
+    .item-ios, .item-md {
+      padding-left:0;
+    }
+  }
+
+  ion-col {
+    &.bool-true {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: lightgreen;
+    }
+    &.bool-false {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: red;
+    }
+  }
+
+  &.ion-page {
+    ion-content {
+      background-image:none;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+<ion-header>
+
+	<ion-navbar>
+		<ion-title>Settings</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+	<div *ngIf="authenticated">
+		<!-- <form> -->
+			<ion-list>
+				<ion-item>
+					<ion-label for="id" stacked>ID</ion-label>
+					<ion-input type="text" name="id" [(ngModel)]="vehicleSettings.id"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label for="make" stacked>Make</ion-label>
+					<ion-input type="text" name="make" [(ngModel)]="vehicleSettings.make"></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label for="model" stacked>Model</ion-label>
+					<ion-input type="text" name="model" [(ngModel)]="vehicleSettings.model"></ion-input>
+				</ion-item>
+			</ion-list>
+			<div padding>
+				<button ion-button block (click)="saveSettings()">Save</button>
+			</div>
+		<!-- </form> -->
+	</div>
+
+	<div *ngIf="!authenticated">
+		<h1>Login</h1>
+		<p>Please enter password to adjust settings</p>
+
+		<ion-item no-padding>
+			<ion-label stacked>Password</ion-label>
+			<ion-input type="password" [(ngModel)]="password"></ion-input>
+		</ion-item>
+
+		<div text-center>
+			<button block ion-button (click)="login()" margin-vertical>Login</button>
+		</div>
+	</div>
+
+</ion-content>

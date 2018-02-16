@@ -1,0 +1,54 @@
+<ion-header>
+    <app-header title="Gauges"></app-header>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row class="parent-row">
+			<ion-col text-center class="side-col">
+
+				<ion-row>
+					<ion-col>
+						<canvas id="engine-temp"></canvas>
+					</ion-col>
+				</ion-row>
+
+				<ion-row>
+					<ion-col>
+						<canvas id="oil-press"></canvas>
+					</ion-col>
+				</ion-row>
+			</ion-col>
+
+			<ion-col text-center class="center-col" style="height:100%;">
+
+				<ion-row style="height:100%;">
+					<ion-col style="height:100%;">
+						<canvas id="engine-rpm"></canvas>
+
+						<div text-center class="engine-hours">
+							<h1>Engine Hours: {{ engineHours }}</h1>
+						</div>
+					</ion-col>
+				</ion-row>
+
+			</ion-col>
+
+			<ion-col text-center class="side-col">
+				<ion-row>
+					<ion-col>
+						<canvas id="battery-volt"></canvas>
+					</ion-col>
+				</ion-row>
+
+				<ion-row>
+					<ion-col>
+						<canvas id="hydr-temp"></canvas>
+					</ion-col>
+				</ion-row>
+
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+</ion-content>

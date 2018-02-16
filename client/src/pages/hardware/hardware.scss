@@ -1,0 +1,31 @@
+page-hardware {
+	ion-icon {
+		font-size: 4em;
+		&.green {
+			color: color($colors, green);
+		}
+		&.red {
+			color: color($colors, red);
+		}
+	}
+	ion-card, ion-card-content {
+		height: 100%;
+	}
+	ion-card-content {
+		&.text-param {
+			font-size:35px;
+		}
+		&.text-param-sm {
+			font-size:20px;
+		}
+	}
+	.card-md, .card-ios {
+		background:#575757;
+		color: #fff !important;
+
+		.card-header-md,
+		.card-header-ios {
+			color: #fff !important;
+		}
+	}
+}

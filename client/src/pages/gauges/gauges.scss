@@ -1,0 +1,38 @@
+page-gauges {
+	.content {
+		.scroll-content {
+			background-color:#eee;
+		}
+	}
+
+	// canvas {
+	// 	max-width:100%;
+	// 	max-height:100%;
+	// }
+
+	div.engine-hours {
+		margin-top:5px;
+		padding:5px;
+		background-color:#eee;
+		border-radius:3px;
+		border:1px solid #555;
+		font-style: italic;
+    	font-weight: bold;
+	}
+
+	// ion-grid {
+	//     height: 100%;
+	//     ion-row {
+	// 		height:100%;
+	// 		ion-col {
+	// 			height:100%;
+	// 	    	ion-row {
+	// 	    		height:50%;
+	// 	    		ion-col {
+	// 					height: 100%;
+	// 	    		}
+	// 	    	}
+	// 		}
+	//     }
+	// }
+}

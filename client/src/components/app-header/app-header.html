@@ -1,0 +1,10 @@
+<ion-navbar>
+    <ion-title *ngIf="showLogo">
+        <img class="logo" src="assets/imgs/home/logo.PNG">
+    </ion-title>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="title">{{ title }} </ion-title>
+	<p *ngIf="showSettings" margin-right>{{ settings.make }} {{ settings.model }} {{ settings.id }}</p>
+</ion-navbar>

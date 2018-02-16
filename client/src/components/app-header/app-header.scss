@@ -1,0 +1,11 @@
+app-header {
+	ion-title, p {
+		display:inline-flex;
+	}
+	p {
+		margin:0;
+		float:right;
+		margin-top:6px;
+		font-weight:bold;
+	}
+}

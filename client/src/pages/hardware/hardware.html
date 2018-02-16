@@ -1,0 +1,74 @@
+<ion-header>
+    <app-header title="Hardware"></app-header>
+</ion-header>
+
+<ion-content>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-12 col-sm-6 padding>
+				<ion-card>
+					<ion-card-header>
+						GSM Status
+					</ion-card-header>
+					<ion-card-content text-center padding>
+						<ion-icon [name]="gsmConnected ? 'checkbox' : 'alert'" [ngClass]="gsmConnected ? 'green' : 'red'"></ion-icon>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col col-12 col-sm-6 padding>
+				<ion-card>
+					<ion-card-header>
+						GSM Signal
+					</ion-card-header>
+					<ion-card-content text-center padding>
+						<signal-strength [strength]="gsmSignalStrength"></signal-strength>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12 col-sm-6 padding>
+				<ion-card>
+					<ion-card-header>
+						GPS Status
+					</ion-card-header>
+					<ion-card-content text-center padding>
+						<ion-icon [name]="gpsConnected ? 'checkbox' : 'alert'" [ngClass]="gpsConnected ? 'green' : 'red'"></ion-icon>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col col-12 col-sm-6 padding>
+				<ion-card>
+					<ion-card-header>
+						GPS Satellites
+					</ion-card-header>
+					<ion-card-content text-center padding class="text-param">
+						{{ gpsSatNum }}
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col col-12 col-sm-6 padding>
+				<ion-card>
+					<ion-card-header>
+						CAN 1 Status
+					</ion-card-header>
+					<ion-card-content text-center padding>
+						<ion-icon [name]="!can1Error ? 'checkbox' : 'alert'" [ngClass]="!can1Error ? 'green' : 'red'"></ion-icon>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+			<ion-col col-12 col-sm-6 padding>
+				<ion-card>
+					<ion-card-header>
+						CAN 2 Status
+					</ion-card-header>
+					<ion-card-content text-center padding>
+						<ion-icon [name]="!can2Error ? 'checkbox' : 'alert'" [ngClass]="!can2Error ? 'green' : 'red'"></ion-icon>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
